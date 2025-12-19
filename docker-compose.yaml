@@ -17,7 +17,7 @@ services:
       - mongo-data:/data/db
 
   hyper-service:
-    image: mayarun/hyper-composer:latest
+    image: hyper-service
     container_name: hyper-task-manager
     build:
       context: .
