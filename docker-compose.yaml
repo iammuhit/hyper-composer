@@ -16,6 +16,20 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  hyper-service:
+    image: mayarun/hyper-composer:latest
+    container_name: hyper-task-manager
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_HOST_NAME: ${MONGO_HOST_NAME}
+      MONGO_PORT_NUMBER: ${MONGO_PORT_NUMBER}
+    env_file:
+      - .env
+
 volumes:
   mongo-data:
 
