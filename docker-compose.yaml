@@ -35,4 +35,3 @@ volumes:
 
 networks:
   hyper-task-manager-network:
-    driver: bridge
